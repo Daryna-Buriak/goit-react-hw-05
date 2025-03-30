@@ -1,0 +1,16 @@
+.backBttn {
+  margin-bottom: 20px;
+}
+
+.addInfoBlock {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-top: solid grey;
+  border-bottom: solid grey;
+}
+
+ul {
+  padding-left: 0;
+}

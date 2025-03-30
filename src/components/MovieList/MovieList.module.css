@@ -1,0 +1,12 @@
+.moviesList {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movieTitle {
+  font-size: 30px;
+  color: #213547;
+}
