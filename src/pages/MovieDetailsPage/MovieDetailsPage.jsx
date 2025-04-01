@@ -22,11 +22,17 @@ export default function MovieDetailsPage() {
   const [error, setError] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const backLinkRef = useRef(location.state?.from || "/movie");
+  const backLinkRef = useRef(location.state?.from || "/");
   const [cast, setCast] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [showCast, setShowCast] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.from) {
+      backLinkRef.current = location.state.from;
+    }
+  }, [location.state?.from]);
 
   useEffect(() => {
     async function getMovie() {
@@ -78,7 +84,7 @@ export default function MovieDetailsPage() {
     <div>
       <button
         className={css.backBttn}
-        onClick={() => navigate(location.state?.from ?? "/")}
+        onClick={() => navigate(backLinkRef.current)}
       >
         ← Go Back
       </button>
